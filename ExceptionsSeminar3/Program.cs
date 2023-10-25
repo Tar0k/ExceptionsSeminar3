@@ -7,10 +7,10 @@ while (true)
     // inputData = "Иванов Иван Иванович 20.20.2000 832573354761234 f";
     // inputData = "Петров Петр Петрович 12.12.1912 832565 f";
 
-    if (inputData == null)
+    if (string.IsNullOrEmpty(inputData))
     {
         Console.WriteLine("Данные не введены");
-        break;
+        continue;
     }
     
     try
@@ -27,7 +27,6 @@ while (true)
                     Console.WriteLine("Введеных параметров больше чем нужно");
                     break;
             }
-
             continue;
         }
         using var writer = new StreamWriter($"{result.Person?.LastName}.txt", true);
