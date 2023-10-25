@@ -30,12 +30,13 @@ public partial class Person
     
     
     /// <summary>
-    /// Создает объект Person из данных во входной строке
+    /// Создает класс Person из входной строки
     /// </summary>
-    /// <param name="data"></param> Входная строка данных о персонаже
-    /// Формат: Фамилия Имя Отчество датарождения номертелефона пол
-    /// <returns></returns>
-    /// <exception cref="ArgumentException"></exception>
+    /// <param name="data">входная строка</param>
+    /// <returns>Объект CreateResult, в котором Person и код ошибки при создании</returns>
+    /// <exception cref="NotOnlyLettersException">Входной параметр заявленный как строка из букв найдены другие символы</exception>
+    /// <exception cref="WrongFormatException">Входной параметр в некорректном формате</exception>
+    /// <exception cref="InputStringException">Входной параметр некорректен</exception>
     public static CreateResult Create(string data)
     {
 
